@@ -3,26 +3,25 @@ package com.anonos.bigprivacy.starter;
 import com.anonos.bigprivacy.privacypolicyapi.DataType;
 import com.anonos.bigprivacy.privacypolicyapi.Field;
 import com.anonos.bigprivacy.privacypolicyapi.RuleExecutionException;
-import com.anonos.bigprivacy.privacypolicyapi.LoadablePrivacyPolicy;
 import com.anonos.bigprivacy.privacypolicyapi.PrivacyPolicy;
 import com.anonos.bigprivacy.privacypolicyapi.PrivacyPolicyRule;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import com.anonos.bigprivacy.privacypolicyapi.*;
 import java.util.List;
 import java.util.Set;
 
 /**
  * A sample policy that doesn't do much.
  */
-@LoadablePrivacyPolicy
 public class StarterPolicy implements PrivacyPolicy {
 
     private static final ThreadLocal<List<PrivacyPolicyRule>> rules = new ThreadLocal<List<PrivacyPolicyRule>>() {
         @Override
         protected List<PrivacyPolicyRule> initialValue() {
             final List<PrivacyPolicyRule> rules = new ArrayList<>();
-            rules.add(new StarterRule());
+            rules.add(new DescriptionRule());
             return rules;
         }
     };
@@ -76,16 +75,10 @@ public class StarterPolicy implements PrivacyPolicy {
             // TODO rule execution should cause a RuleExecutionException to be thrown.  Note
             // TODO that null is an acceptable value to return from this method, but it should
             // TODO generally only be used if the input is also null.
+            final String result= "";
 
-
-            if(input.equals("OOS") || input.equals("106")|| input.equals("120")|| input.equals("121")|| input.equals("122")|| input.equals("123"))
-            {
-                return "200";
-            }
-            else
-                {
-                    return String.valueOf(input);
-                }
+            if(input.equals("OOS") || input.equals("106")|| input.equals("120")|| input.equals("121")|| input.equals("122")|| input.equals("123"));
+            return result;
         }
     }
 }

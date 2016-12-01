@@ -76,9 +76,14 @@ public class StarterPolicy implements PrivacyPolicy {
             // TODO rule execution should cause a RuleExecutionException to be thrown.  Note
             // TODO that null is an acceptable value to return from this method, but it should
             // TODO generally only be used if the input is also null.
+            if(input == null)
+            {
+                return "12*";
+            }
+            else {
 
-            return input.toString().replaceAll(".$","*");
-
+                return input.toString().replaceAll(".$","*");
+            }
         }
     }
 }
